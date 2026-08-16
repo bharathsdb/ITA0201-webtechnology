@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Developer Tools</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eff6ff;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #aaa;
+        }
+
+        h1 {
+            color: #2563eb;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #dbeafe;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Browser Developer Tools</h1>
+
+    <p>
+        Open Developer Tools using:
+        <b>F12</b> or <b>Ctrl + Shift + I</b>
+    </p>
+
+    <button onclick="loadData()">
+        Send Request
+    </button>
+
+    <div id="output">
+        Click the button and check the Network tab.
+    </div>
+
+</div>
+
+<script>
+
+function loadData() {
+
+    console.log("Request started");
+
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(response => {
+
+            console.log("Status Code:", response.status);
+            console.log("Protocol can be observed in Network tab.");
+
+            return response.json();
+        })
+
+        .then(data => {
+
+            console.log("Received Data:", data);
+
+            document.getElementById("output").innerHTML =
+                "<b>Request successful!</b><br>" +
+                "Status Code: 200<br>" +
+                "Open Developer Tools → Network to observe details.";
+        })
+
+        .catch(error => {
+
+            console.error("Error:", error);
+
+            document.getElementById("output").innerHTML =
+                "Request failed.";
+        });
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class Timetable</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0fdf4;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #aaa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #16a34a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        caption {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 12px;
+        }
+
+        th {
+            background: #16a34a;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #dcfce7;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Class Timetable</h1>
+
+    <table cellspacing="5" cellpadding="10">
+
+        <caption>Computer Science - Weekly Timetable</caption>
+
+        <tr>
+            <th>Day</th>
+            <th>9-10 AM</th>
+            <th>10-11 AM</th>
+            <th>11-12 PM</th>
+            <th>12-1 PM</th>
+        </tr>
+
+        <tr>
+            <th>Monday</th>
+            <td>HTML</td>
+            <td>CSS</td>
+            <td rowspan="2">JavaScript</td>
+            <td>Maths</td>
+        </tr>
+
+        <tr>
+            <th>Tuesday</th>
+            <td>Python</td>
+            <td>Database</td>
+            <td>English</td>
+        </tr>
+
+        <tr>
+            <th>Wednesday</th>
+            <td colspan="2">Web Lab</td>
+            <td>Maths</td>
+            <td>Java</td>
+        </tr>
+
+        <tr>
+            <th>Thursday</th>
+            <td>CSS</td>
+            <td>HTML</td>
+            <td>Python</td>
+            <td>Database</td>
+        </tr>
+
+        <tr>
+            <th>Friday</th>
+            <td>JavaScript</td>
+            <td>Maths</td>
+            <td colspan="2">Project Work</td>
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock and Countdown</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 60px auto;
+        }
+
+        .clock, .countdown {
+            background: #1e293b;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #000;
+        }
+
+        h1 {
+            color: #38bdf8;
+        }
+
+        #time {
+            font-size: 45px;
+            color: #22c55e;
+        }
+
+        #timer {
+            font-size: 35px;
+            color: #facc15;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="clock">
+        <h1>Digital Clock</h1>
+        <p id="time"></p>
+    </div>
+
+    <div class="countdown">
+        <h1>Exam Countdown</h1>
+        <p id="timer"></p>
+    </div>
+
+</div>
+
+<script>
+function digitalClock() {
+
+    let now = new Date();
+
+    let hours = String(now.getHours()).padStart(2, "0");
+    let minutes = String(now.getMinutes()).padStart(2, "0");
+    let seconds = String(now.getSeconds()).padStart(2, "0");
+
+    document.getElementById("time").innerHTML =
+        hours + ":" + minutes + ":" + seconds;
+}
+
+setInterval(digitalClock, 1000);
+
+digitalClock();
+
+
+// Exam countdown
+let examDate = new Date();
+examDate.setHours(examDate.getHours() + 2);
+
+function countdown() {
+
+    let now = new Date();
+
+    let difference = examDate - now;
+
+    if (difference <= 0) {
+        document.getElementById("timer").innerHTML = "Exam Started!";
+        return;
+    }
+
+    let hours = Math.floor(difference / (1000 * 60 * 60));
+    let minutes = Math.floor(
+        (difference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    let seconds = Math.floor(
+        (difference % (1000 * 60)) / 1000
+    );
+
+    document.getElementById("timer").innerHTML =
+        hours + "h " + minutes + "m " + seconds + "s";
+}
+
+setInterval(countdown, 1000);
+</script>
+
+</body>
+</html>

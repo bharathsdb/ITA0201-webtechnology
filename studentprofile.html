@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        /* Profile Card */
+        .profile {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .profile h2 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            margin: 8px;
+            font-size: 16px;
+        }
+
+        /* Information Section */
+        .info {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background: #eff6ff;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .box h3 {
+            color: #1d4ed8;
+            margin-bottom: 10px;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #1e293b;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .profile {
+                padding: 20px;
+            }
+
+            .info {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Profile</h1>
+        <p>Welcome to my personal profile</p>
+    </header>
+
+    <div class="profile">
+
+        <!-- Student Image -->
+        <img src="https://via.placeholder.com/150" alt="Student Photo">
+
+        <h2>John Doe</h2>
+
+        <p><strong>Course:</strong> B.Sc Computer Science</p>
+        <p><strong>Roll No:</strong> CS101</p>
+        <p><strong>Email:</strong> johndoe@example.com</p>
+
+        <div class="info">
+
+            <div class="box">
+                <h3>Skills</h3>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+            </div>
+
+            <div class="box">
+                <h3>Education</h3>
+                <p>B.Sc Computer Science</p>
+                <p>ABC College</p>
+                <p>2023 - 2026</p>
+            </div>
+
+            <div class="box">
+                <h3>Hobbies</h3>
+                <p>Reading</p>
+                <p>Photography</p>
+                <p>Music</p>
+            </div>
+
+        </div>
+
+        <a href="#" class="btn">Contact Me</a>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Student Profile</p>
+    </footer>
+
+</body>
+</html>

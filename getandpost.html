@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GET and POST Methods</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f3e8ff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #aaa;
+        }
+
+        h1 {
+            color: #7e22ce;
+            text-align: center;
+        }
+
+        h2 {
+            color: #9333ea;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #7e22ce;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>GET and POST Methods</h1>
+
+    <div class="box">
+
+        <h2>GET Method</h2>
+
+        <form method="get" action="">
+            <input type="text" name="name"
+                   placeholder="Enter your name">
+
+            <input type="email" name="email"
+                   placeholder="Enter email">
+
+            <button type="submit">Send Using GET</button>
+        </form>
+
+        <p>
+            GET data is visible in the browser URL.
+        </p>
+
+    </div>
+
+    <div class="box">
+
+        <h2>POST Method</h2>
+
+        <form method="post" action="">
+            <input type="text" name="name"
+                   placeholder="Enter your name">
+
+            <input type="email" name="email"
+                   placeholder="Enter email">
+
+            <button type="submit">Send Using POST</button>
+        </form>
+
+        <p>
+            POST data is not displayed in the URL.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

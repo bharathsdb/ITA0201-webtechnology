@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #e0f2fe;
+        }
+
+        .form {
+            width: 90%;
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #999;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0284c7;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form">
+
+    <h1>Student Registration</h1>
+
+    <form onsubmit="return validateForm()">
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="text" id="email">
+
+        <label>Phone</label>
+        <input type="text" id="phone">
+
+        <label>Course</label>
+        <select id="course">
+            <option value="">Select Course</option>
+            <option>B.Sc Computer Science</option>
+            <option>BCA</option>
+            <option>B.Tech</option>
+        </select>
+
+        <label>Password</label>
+        <input type="password" id="password">
+
+        <button type="submit">Register</button>
+
+    </form>
+
+</div>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let course = document.getElementById("course").value;
+    let password = document.getElementById("password").value;
+
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let phonePattern = /^[0-9]{10}$/;
+
+    if (name == "") {
+        alert("Please enter your name");
+        return false;
+    }
+
+    if (!emailPattern.test(email)) {
+        alert("Enter a valid email");
+        return false;
+    }
+
+    if (!phonePattern.test(phone)) {
+        alert("Enter a valid 10-digit phone number");
+        return false;
+    }
+
+    if (course == "") {
+        alert("Please select a course");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must contain at least 6 characters");
+        return false;
+    }
+
+    alert("Registration successful!");
+    return true;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #fef3c7;
+        }
+
+        .form-box {
+            max-width: 500px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #999;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d97706;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .radio, .check {
+            width: auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 15px 5px 0 0;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .submit {
+            background: #16a34a;
+        }
+
+        .reset {
+            background: #dc2626;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-box">
+
+    <h1>Student Registration</h1>
+
+    <form>
+
+        <label>Name</label>
+        <input type="text" name="name">
+
+        <label>Password</label>
+        <input type="password" name="password">
+
+        <label>Email</label>
+        <input type="email" name="email">
+
+        <label>Gender</label>
+
+        <input class="radio" type="radio" name="gender" value="male">
+        Male
+
+        <input class="radio" type="radio" name="gender" value="female">
+        Female
+
+        <label>Hobbies</label>
+
+        <input class="check" type="checkbox" name="hobby">
+        Reading
+
+        <input class="check" type="checkbox" name="hobby">
+        Music
+
+        <input class="check" type="checkbox" name="hobby">
+        Sports
+
+        <label>Course</label>
+
+        <select>
+            <option>Select Course</option>
+            <option>BCA</option>
+            <option>B.Sc Computer Science</option>
+            <option>B.Tech</option>
+        </select>
+
+        <button class="submit" type="submit">Submit</button>
+
+        <button class="reset" type="reset">Reset</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

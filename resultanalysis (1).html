@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Analysis</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0fdf4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #aaa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #16a34a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #16a34a;
+            color: white;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #dcfce7;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Result Analysis</h1>
+
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+
+        <tr>
+            <td>HTML</td>
+            <td>85</td>
+        </tr>
+
+        <tr>
+            <td>CSS</td>
+            <td>78</td>
+        </tr>
+
+        <tr>
+            <td>JavaScript</td>
+            <td>90</td>
+        </tr>
+
+        <tr>
+            <td>Database</td>
+            <td>82</td>
+        </tr>
+    </table>
+
+    <div class="result" id="result"></div>
+
+</div>
+
+<script>
+let marks = [85, 78, 90, 82];
+
+let total = 0;
+
+for (let mark of marks) {
+    total += mark;
+}
+
+let average = total / marks.length;
+let highest = Math.max(...marks);
+let lowest = Math.min(...marks);
+
+let grade;
+
+if (average >= 90)
+    grade = "A+";
+else if (average >= 80)
+    grade = "A";
+else if (average >= 70)
+    grade = "B";
+else if (average >= 60)
+    grade = "C";
+else
+    grade = "D";
+
+document.getElementById("result").innerHTML =
+    "<b>Total Marks:</b> " + total + "/400<br>" +
+    "<b>Average:</b> " + average.toFixed(2) + "<br>" +
+    "<b>Highest Mark:</b> " + highest + "<br>" +
+    "<b>Lowest Mark:</b> " + lowest + "<br>" +
+    "<b>Grade:</b> " + grade;
+</script>
+
+</body>
+</html>

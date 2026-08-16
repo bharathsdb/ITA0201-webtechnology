@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debugging Web Application</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #fee2e2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .box {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #999;
+        }
+
+        h1 {
+            color: #dc2626;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #991b1b;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fee2e2;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Debugging Application</h1>
+
+    <p>Enter two numbers</p>
+
+    <input type="number" id="num1" placeholder="First number">
+
+    <input type="number" id="num2" placeholder="Second number">
+
+    <br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+
+function calculate() {
+
+    console.log("Calculate function started");
+
+    try {
+
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+
+        if (isNaN(a) || isNaN(b)) {
+            throw new Error("Invalid input");
+        }
+
+        let sum = a + b;
+
+        document.getElementById("output").innerHTML =
+            "<b>Result:</b> " + sum;
+
+        console.log("Calculation successful:", sum);
+
+    } catch (error) {
+
+        console.error("Error:", error);
+
+        document.getElementById("output").innerHTML =
+            "Error: " + error.message;
+    }
+}
+
+</script>
+
+</body>
+</html>
