@@ -1,0 +1,282 @@
+:root {
+    /* Color Palette */
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-color: #fefeff;
+    --surface-color: #faf5f5;
+    --surface-light: #fbf9f9;
+    --text-primary: #fcfbfb;
+    --text-secondary: #f4f4f4;
+    --border-color: #fff8f8;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+
+    /* Gradients */
+    --gradient-start: #6366f1;
+    --gradient-end: #0ea5e9;
+    --gradient-avatar: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-image:
+
+        url('image3.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.app-container {
+    background-color: transparent;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    backdrop-filter: blur(3px);
+}
+
+header {
+    padding: 2.5rem 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+select {
+    appearance: none;
+    cursor: pointer;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-top: 1rem;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4), 0 4px 6px -2px rgba(99, 102, 241, 0.2);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.profile-container {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styled Profile Card generated via JS */
+.student-card {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 16px;
+    padding: 1.75rem;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.1);
+    backdrop-filter: blur(12px);
+}
+
+.student-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-avatar);
+    border-radius: 16px 16px 0 0;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.75rem;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    background: var(--gradient-avatar);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-right: 1.25rem;
+    box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3);
+    transform: rotate(-5deg);
+}
+
+.profile-name {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.profile-reg {
+    color: var(--gradient-end);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.detail-item {
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+.remove-btn {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.remove-btn:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger-color);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.app-container img {
+    width: 100px;
+    height: 100px;
+}
