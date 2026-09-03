@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saveetha University Course Registration Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Saveetha University Course Registration Portal</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#registration">Registration</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 3. Lists for Instructions -->
+        <section id="home" class="card">
+            <h2>Welcome to Course Registration</h2>
+            <h3>Instructions & Eligibility Requirements:</h3>
+            <ul>
+                <li>Students must have cleared all previous semester dues. <a href="#contact" class="link">Check Dues
+                        Status</a></li>
+                <li>Ensure you meet the prerequisites for the courses you select.</li>
+                <li>A maximum of 25 credits can be selected per semester.</li>
+                <li>Registration is final upon submission. Contact the academic office for modifications.</li>
+            </ul>
+        </section>
+
+        <!-- 2. Display 5 available courses in a table -->
+        <section id="courses" class="card">
+            <h2>Available Courses</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Credits</th>
+                            <th>Course Type</th>
+                            <th>Select</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courseTableBody">
+                        <tr>
+                            <td>CS101</td>
+                            <td>Introduction to Programming</td>
+                            <td>4</td>
+                            <td>Theory</td>
+                            <td><input type="checkbox" name="course" value="CS101"
+                                    data-name="Introduction to Programming" data-credits="4"></td>
+                        </tr>
+                        <tr>
+                            <td>CS102</td>
+                            <td>Data Structures</td>
+                            <td>4</td>
+                            <td>Theory</td>
+                            <td><input type="checkbox" name="course" value="CS102" data-name="Data Structures"
+                                    data-credits="4"></td>
+                        </tr>
+                        <tr>
+                            <td>CS103</td>
+                            <td>Web Development Lab</td>
+                            <td>2</td>
+                            <td>Practical</td>
+                            <td><input type="checkbox" name="course" value="CS103" data-name="Web Development Lab"
+                                    data-credits="2"></td>
+                        </tr>
+                        <tr>
+                            <td>MA201</td>
+                            <td>Discrete Mathematics</td>
+                            <td>3</td>
+                            <td>Theory</td>
+                            <td><input type="checkbox" name="course" value="MA201" data-name="Discrete Mathematics"
+                                    data-credits="3"></td>
+                        </tr>
+                        <tr>
+                            <td>HU101</td>
+                            <td>Communication Skills</td>
+                            <td>2</td>
+                            <td>Theory</td>
+                            <td><input type="checkbox" name="course" value="HU101" data-name="Communication Skills"
+                                    data-credits="2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. Student registration form -->
+        <section id="registration" class="card">
+            <h2>Student Registration Form</h2>
+            <form id="registrationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regNumber">Register Number *</label>
+                        <input type="text" id="regNumber" name="regNumber" placeholder="e.g. REG12345" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentName">Student Name *</label>
+                        <input type="text" id="studentName" name="studentName" placeholder="Enter Full Name" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="student@university.edu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department *</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select Department</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Mechanical">Mechanical</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="semester">Semester (1-8) *</label>
+                    <input type="number" id="semester" name="semester" min="1" max="8" placeholder="e.g. 3" required>
+                </div>
+
+                <!-- Error message container -->
+                <div id="error-message" class="error-msg"></div>
+
+                <button type="submit" class="btn">Submit Registration</button>
+            </form>
+        </section>
+
+        <!-- 9. Registration Summary Display without reload -->
+        <section id="summary" class="card hidden">
+            <h2>Registration Summary</h2>
+            <div id="summaryContent" class="summary-details">
+                <!-- Data injected dynamically by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 1. Contact Details & footer -->
+    <footer id="contact">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <p>Email: academic@saveetha.com | Phone: +1 234 567 890</p>
+            <p>&copy; 2026 Saveetha University Registration Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
